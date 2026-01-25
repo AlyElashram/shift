@@ -71,7 +71,7 @@ export function Logo({
   // Full logo: SHIFT By Joe with racing lines
   return (
     <svg
-      viewBox="0 0 320 50"
+      viewBox="0 0 280 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -93,8 +93,8 @@ export function Logo({
         strokeLinecap="round"
       />
       {/* Racing lines (signature brand element) */}
-      <rect x="58" y="23" width="140" height="2.5" fill={fillColor} rx="1" />
-      <rect x="58" y="28" width="120" height="2.5" fill={fillColor} rx="1" />
+      <rect x="58" y="23" width="160" height="2.5" fill={fillColor} rx="1" />
+      <rect x="58" y="28" width="140" height="2.5" fill={fillColor} rx="1" />
       {/* I */}
       <path
         d="M64 8V42"
@@ -104,27 +104,28 @@ export function Logo({
       />
       {/* F */}
       <path
-        d="M205 8H225M205 8V42M205 24H220"
+        d="M225 8H245M225 8V42M225 24H240"
         stroke={fillColor}
         strokeWidth="3"
         strokeLinecap="round"
       />
       {/* T */}
       <path
-        d="M235 8H260M247.5 8V42"
+        d="M253 8H278M265.5 8V42"
         stroke={fillColor}
         strokeWidth="3"
         strokeLinecap="round"
       />
       {/* "By Joe" in italic script style */}
       <text
-        x="115"
-        y="22"
+        x="120"
+        y="20"
         fill={fillColor}
         fontFamily="'Playfair Display', serif"
         fontStyle="italic"
-        fontSize="16"
+        fontSize="14"
         fontWeight="400"
+        textAnchor="middle"
       >
         By Joe
       </text>
