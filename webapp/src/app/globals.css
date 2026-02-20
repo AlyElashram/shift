@@ -79,9 +79,10 @@
   --color-shift-gray-light: var(--shift-gray-light);
 
   /* Fonts */
-  --font-heading: var(--font-oswald);
-  --font-body: var(--font-barlow);
-  --font-accent: var(--font-playfair);
+  --font-heading: var(--font-obviously);
+  --font-display: var(--font-obviously-wide);
+  --font-body: var(--font-obviously);
+  --font-accent: var(--font-obviously);
 }
 
 /* Base Styles */
@@ -98,8 +99,9 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body, 'Barlow', sans-serif);
+  font-family: var(--font-body), sans-serif;
   font-size: var(--font-size-base);
+  font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -107,14 +109,20 @@ body {
 
 /* Typography Base */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading, 'Oswald', sans-serif);
+  font-family: var(--font-heading), sans-serif;
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
-h1 { font-size: var(--font-size-7xl); }
+/* Display headings use the wide variant for more impact */
+h1 {
+  font-family: var(--font-display), sans-serif;
+  font-size: var(--font-size-7xl);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
 h2 { font-size: var(--font-size-5xl); }
 h3 { font-size: var(--font-size-3xl); }
 h4 { font-size: var(--font-size-2xl); }
@@ -123,7 +131,7 @@ h6 { font-size: var(--font-size-lg); }
 
 /* Accent Text (for "By Joe" style) */
 .font-accent {
-  font-family: var(--font-accent, 'Playfair Display', serif);
+  font-family: var(--font-accent), sans-serif;
   font-style: italic;
   font-weight: 400;
   text-transform: none;
@@ -231,7 +239,7 @@ h6 { font-size: var(--font-size-lg); }
   justify-content: center;
   gap: var(--space-sm);
   padding: var(--space-md) var(--space-xl);
-  font-family: var(--font-heading, 'Oswald', sans-serif);
+  font-family: var(--font-heading), sans-serif;
   font-size: var(--font-size-sm);
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -319,4 +327,59 @@ h6 { font-size: var(--font-size-lg); }
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* =========================================
+   Phone Input Styling
+   ========================================= */
+
+.phone-input-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.phone-input-container .PhoneInputCountry {
+  padding: 0.75rem;
+  background: var(--shift-black);
+  border: 1px solid var(--shift-gray);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-base);
+}
+
+.phone-input-container .PhoneInputCountry:focus-within {
+  border-color: var(--shift-yellow);
+}
+
+.phone-input-container .PhoneInputCountrySelect {
+  background: transparent;
+  color: var(--shift-cream);
+}
+
+.phone-input-container .PhoneInputCountrySelectArrow {
+  border-color: var(--shift-gray-light);
+}
+
+.phone-input-container .PhoneInputInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--shift-black);
+  border: 1px solid var(--shift-gray);
+  border-radius: var(--radius-lg);
+  color: var(--shift-cream);
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+
+.phone-input-container .PhoneInputInput::placeholder {
+  color: var(--shift-gray);
+}
+
+.phone-input-container .PhoneInputInput:focus {
+  border-color: var(--shift-yellow);
+}
+
+.phone-input-error .PhoneInputCountry,
+.phone-input-error .PhoneInputInput {
+  border-color: #ef4444;
 }
