@@ -1,4 +1,4 @@
-import { Logo, Button, MobileNav } from "@/components/ui";
+import { Logo, Button, MobileNav, ContactForm } from "@/components/ui";
 
 export default function Home() {
   return (
@@ -20,17 +20,19 @@ export default function Home() {
               href="#trip-ticket"
               className="text-[var(--shift-cream)] hover:text-[var(--shift-yellow)] transition-colors text-sm uppercase tracking-wider"
             >
-              Trip Ticket
+              Our Process
             </a>
             <a
-              href="#contact"
+              href="#showcase"
               className="text-[var(--shift-cream)] hover:text-[var(--shift-yellow)] transition-colors text-sm uppercase tracking-wider"
             >
-              Contact
+              Showcase
             </a>
-            <Button variant="primary" size="sm">
-              Get Started
-            </Button>
+            <a href="#contact">
+              <Button variant="primary" size="sm">
+                Get Started
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Nav */}
@@ -52,12 +54,6 @@ export default function Home() {
             <Logo variant="full" color="yellow" className="h-12 sm:h-16 md:h-20 w-auto mx-auto mb-6 sm:mb-8" />
           </div>
 
-          <div className="animate-slide-up" style={{ animationDelay: "0.1s" }}>
-            <p className="text-[var(--shift-gray-light)] text-sm sm:text-lg md:text-xl tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6">
-              Quick &bull; Smart &bull; Vivide
-            </p>
-          </div>
-
           <div className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
             <h1 className="text-[var(--shift-cream)] text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-none mb-6 sm:mb-8">
               Premium Car
@@ -68,9 +64,8 @@ export default function Home() {
 
           <div className="animate-slide-up" style={{ animationDelay: "0.3s" }}>
             <p className="text-[var(--shift-gray-light)] text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 px-4">
-              Bringing your dream cars from{" "}
-              <span className="text-[var(--shift-yellow)]">UAE</span> &{" "}
-              <span className="text-[var(--shift-yellow)]">Qatar</span> to Egypt
+              Bringing your dream cars from the{" "}
+              <span className="text-[var(--shift-yellow)]">UAE</span> to Egypt
               with our seamless Trip Ticket system.
             </p>
           </div>
@@ -79,19 +74,27 @@ export default function Home() {
             className="animate-slide-up flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4"
             style={{ animationDelay: "0.4s" }}
           >
-            <Button variant="primary" size="lg" className="w-full sm:w-auto">
-              Start Your Trip Ticket
-            </Button>
-            <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-              Learn More
-            </Button>
+            <a href="#contact">
+              <Button variant="primary" size="lg" className="w-full sm:w-auto">
+                Start Your Trip Ticket
+              </Button>
+            </a>
+            <a href="#trip-ticket">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+                Learn More
+              </Button>
+            </a>
           </div>
         </div>
 
         {/* Scroll indicator - hidden on very small screens */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
+        <a
+          href="#services"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block hover:text-[var(--shift-yellow)] transition-colors"
+          aria-label="Scroll to services"
+        >
           <svg
-            className="w-6 h-6 text-[var(--shift-gray)]"
+            className="w-6 h-6 text-[var(--shift-gray)] hover:text-[var(--shift-yellow)] transition-colors"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -103,7 +106,7 @@ export default function Home() {
               d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
           </svg>
-        </div>
+        </a>
       </section>
 
       {/* Services Section */}
@@ -118,7 +121,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
             {[
               {
                 icon: "EGP",
@@ -132,18 +135,12 @@ export default function Home() {
                 description:
                   "Access to premium vehicles from UAE markets with verified inspection reports.",
               },
-              {
-                icon: "QAT",
-                title: "Qatar Sourcing",
-                description:
-                  "Exclusive access to Qatar's luxury car market with end-to-end handling.",
-              },
             ].map((service, index) => (
               <div
                 key={index}
-                className="card group hover:border-[var(--shift-yellow)] transition-all"
+                className="bg-[var(--shift-black-muted)] border border-[var(--shift-gray)] rounded-[var(--radius-md)] p-[var(--space-lg)]"
               >
-                <div className="w-14 sm:w-16 h-14 sm:h-16 rounded-full bg-[var(--shift-yellow)]/10 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-[var(--shift-yellow)]/20 transition-colors">
+                <div className="w-14 sm:w-16 h-14 sm:h-16 rounded-full bg-[var(--shift-yellow)]/10 flex items-center justify-center mb-4 sm:mb-6">
                   <span className="text-[var(--shift-yellow)] font-bold text-lg sm:text-xl">
                     {service.icon}
                   </span>
@@ -264,27 +261,241 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-[var(--shift-cream)] text-3xl sm:text-4xl md:text-5xl font-bold uppercase mb-4 sm:mb-6">
-            Ready to
-            <br />
-            <span className="text-gradient">Shift Your Ride?</span>
-          </h2>
-          <p className="text-[var(--shift-gray-light)] text-base sm:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto">
-            Start your Trip Ticket today and experience the future of car
-            importing. Quick. Smart. Vivide.
-          </p>
-          <Button variant="primary" size="lg" className="animate-pulse-glow w-full sm:w-auto">
-            Get Your Trip Ticket
-          </Button>
+      {/* Showcase Section */}
+      <section id="showcase" className="py-16 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10 sm:mb-16">
+            <p className="text-[var(--shift-yellow)] uppercase tracking-[0.2em] text-xs sm:text-sm mb-3 sm:mb-4">
+              Our Track Record
+            </p>
+            <h2 className="text-[var(--shift-cream)] text-3xl sm:text-4xl md:text-5xl font-bold uppercase">
+              Successfully Imported
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                image: "/images/cars/car-1.jpg",
+                model: "Mercedes-Benz G63 AMG",
+                year: "2023",
+                origin: "Dubai, UAE",
+              },
+              {
+                image: "/images/cars/car-2.jpg",
+                model: "Porsche 911 Turbo S",
+                year: "2024",
+                origin: "Abu Dhabi, UAE",
+              },
+              {
+                image: "/images/cars/car-3.jpg",
+                model: "Range Rover Autobiography",
+                year: "2023",
+                origin: "Sharjah, UAE",
+              },
+              {
+                image: "/images/cars/car-4.jpg",
+                model: "BMW X7 M60i",
+                year: "2024",
+                origin: "Dubai, UAE",
+              },
+              {
+                image: "/images/cars/car-5.jpg",
+                model: "Audi RS Q8",
+                year: "2023",
+                origin: "Dubai, UAE",
+              },
+              {
+                image: "/images/cars/car-6.jpg",
+                model: "Lexus LX 600",
+                year: "2024",
+                origin: "Abu Dhabi, UAE",
+              },
+            ].map((car, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg border border-[var(--shift-gray)] hover:border-[var(--shift-yellow)] transition-all"
+              >
+                {/* Image Container */}
+                <div className="aspect-[4/3] bg-[var(--shift-black-muted)] relative overflow-hidden">
+                  {/* Placeholder - replace with actual images */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <svg
+                        className="w-12 h-12 text-[var(--shift-gray)] mx-auto mb-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <p className="text-[var(--shift-gray)] text-xs">
+                        {car.model}
+                      </p>
+                    </div>
+                  </div>
+                  {/* Uncomment when images are added:
+                  <Image
+                    src={car.image}
+                    alt={car.model}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  */}
+                </div>
+
+                {/* Car Info Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--shift-black)] via-[var(--shift-black)]/80 to-transparent p-4 sm:p-6">
+                  <p className="text-[var(--shift-yellow)] text-xs uppercase tracking-wider mb-1">
+                    {car.year} &bull; {car.origin}
+                  </p>
+                  <h3 className="text-[var(--shift-cream)] text-base sm:text-lg font-bold uppercase">
+                    {car.model}
+                  </h3>
+                </div>
+
+                {/* Success Badge */}
+                <div className="absolute top-3 right-3 bg-[var(--shift-yellow)] text-[var(--shift-black)] text-xs font-bold uppercase px-2 py-1 rounded">
+                  Delivered
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10 sm:mt-12">
+            <p className="text-[var(--shift-gray-light)] text-sm sm:text-base mb-4">
+              Join our growing list of satisfied customers
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 text-[var(--shift-yellow)] hover:text-[var(--shift-yellow-light)] transition-colors font-medium uppercase text-sm tracking-wider"
+            >
+              Start Your Import
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="py-16 sm:py-24 px-4 sm:px-6 bg-[var(--shift-black-muted)]"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-start">
+            <div>
+              <p className="text-[var(--shift-yellow)] uppercase tracking-[0.2em] text-xs sm:text-sm mb-3 sm:mb-4">
+                Get In Touch
+              </p>
+              <h2 className="text-[var(--shift-cream)] text-3xl sm:text-4xl md:text-5xl font-bold uppercase mb-4 sm:mb-6">
+                Start Your
+                <br />
+                <span className="text-gradient">Journey Today</span>
+              </h2>
+              <p className="text-[var(--shift-gray-light)] text-base sm:text-lg mb-6 sm:mb-8">
+                Ready to import your dream car? Fill out the form and our team
+                will get back to you.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[var(--shift-yellow)]/10 flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 text-[var(--shift-yellow)]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-[var(--shift-gray)] text-xs uppercase tracking-wider">
+                      Phone
+                    </p>
+                    <p className="text-[var(--shift-cream)] text-sm sm:text-base">
+                      (+20) 109 258 0008
+                    </p>
+                    <p className="text-[var(--shift-cream)] text-sm sm:text-base">
+                      (+20) 107 004 0076
+                    </p>
+                    <p className="text-[var(--shift-cream)] text-sm sm:text-base">
+                      (+971) 527 756 568
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[var(--shift-yellow)]/10 flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 text-[var(--shift-yellow)]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-[var(--shift-gray)] text-xs uppercase tracking-wider">
+                      Location
+                    </p>
+                    <a
+                      href="https://maps.app.goo.gl/XHUgEiupFn3ykyFS6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--shift-cream)] text-sm sm:text-base hover:text-[var(--shift-yellow)] transition-colors"
+                    >
+                      Building 81, South Lotus, New Cairo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="card">
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer
-        id="contact"
         className="py-12 sm:py-16 px-4 sm:px-6 border-t border-[var(--shift-black-muted)]"
       >
         <div className="max-w-7xl mx-auto">
@@ -292,14 +503,19 @@ export default function Home() {
             <div className="sm:col-span-2">
               <Logo variant="full" color="yellow" className="h-8 sm:h-10 w-auto mb-4 sm:mb-6" />
               <p className="text-[var(--shift-gray-light)] mb-4 sm:mb-6 max-w-md text-sm sm:text-base">
-                Premium car import service bringing the finest vehicles from UAE
-                and Qatar to Egypt.
+                Premium car import service bringing the finest vehicles from the
+                UAE to Egypt.
               </p>
-              <p className="text-[var(--shift-gray)] text-xs sm:text-sm">
-                23B Ivoire East, 5th Settlement
+              <a
+                href="https://maps.app.goo.gl/XHUgEiupFn3ykyFS6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--shift-gray)] text-xs sm:text-sm hover:text-[var(--shift-yellow)] transition-colors block"
+              >
+                Building 81, South Lotus
                 <br />
                 New Cairo, Egypt
-              </p>
+              </a>
             </div>
 
             <div>
@@ -307,7 +523,7 @@ export default function Home() {
                 Quick Links
               </h4>
               <ul className="space-y-2">
-                {["Services", "Trip Ticket", "About", "Contact"].map((link) => (
+                {["Services", "Trip Ticket", "Showcase", "Contact"].map((link) => (
                   <li key={link}>
                     <a
                       href={`#${link.toLowerCase().replace(" ", "-")}`}
@@ -324,14 +540,16 @@ export default function Home() {
               <h4 className="text-[var(--shift-cream)] font-bold uppercase mb-3 sm:mb-4 text-sm sm:text-base">
                 Contact
               </h4>
-              <ul className="space-y-2 text-xs sm:text-sm">
+              <ul className="space-y-1 text-xs sm:text-sm">
                 <li className="text-[var(--shift-gray-light)]">
                   <span className="text-[var(--shift-yellow)]">Phone:</span>{" "}
-                  (+20) 0937 220 111
+                  (+20) 109 258 0008
                 </li>
                 <li className="text-[var(--shift-gray-light)]">
-                  <span className="text-[var(--shift-yellow)]">Web:</span>{" "}
-                  Shift.com
+                  (+20) 107 004 0076
+                </li>
+                <li className="text-[var(--shift-gray-light)]">
+                  (+971) 527 756 568
                 </li>
               </ul>
             </div>
@@ -342,9 +560,7 @@ export default function Home() {
               &copy; {new Date().getFullYear()} SHIFT By Joe. All rights
               reserved.
             </p>
-            <p className="text-[var(--shift-gray)] text-xs sm:text-sm">
-              Quick &bull; Smart &bull; Vivide
-            </p>
+            
           </div>
         </div>
       </footer>

@@ -1,23 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 
 const navLinks = [
   { href: "#services", label: "Services" },
-  { href: "#trip-ticket", label: "Trip Ticket" },
-  { href: "#contact", label: "Contact" },
+  { href: "#trip-ticket", label: "Our Process" },
+  { href: "#showcase", label: "Showcase" },
 ];
+
+// Safe hydration check using useSyncExternalStore
+const subscribe = () => () => {};
+const getSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const menuContent = (
     <div
@@ -65,18 +66,23 @@ export function MobileNav() {
 
         {/* CTA Button */}
         <div className="mt-8">
-          <Button variant="primary" size="md" className="w-full">
-            Get Started
-          </Button>
+          <a href="#contact" onClick={() => setIsOpen(false)}>
+            <Button variant="primary" size="md" className="w-full">
+              Get Started
+            </Button>
+          </a>
         </div>
 
         {/* Contact Info */}
         <div className="mt-auto pt-8 border-t border-[var(--shift-black-muted)]">
-          <p className="text-[var(--shift-gray)] text-sm mb-2">
-            <span className="text-[var(--shift-yellow)]">Phone:</span> (+20) 0937 220 111
+          <p className="text-[var(--shift-gray)] text-sm mb-1">
+            <span className="text-[var(--shift-yellow)]">Phone:</span> (+20) 109 258 0008
+          </p>
+          <p className="text-[var(--shift-gray)] text-sm mb-1">
+            (+20) 107 004 0076
           </p>
           <p className="text-[var(--shift-gray)] text-sm">
-            <span className="text-[var(--shift-yellow)]">Web:</span> Shift.com
+            (+971) 527 756 568
           </p>
         </div>
       </div>
