@@ -1,0 +1,239 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loading {
+  color: var(--shift-gray);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--shift-cream);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--shift-gray-light);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.filterTabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filterTab {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  color: var(--shift-gray-light);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterTab:hover {
+  color: var(--shift-cream);
+  background: var(--shift-black);
+}
+
+.filterTabActive {
+  background: var(--shift-yellow);
+  color: var(--shift-black);
+}
+
+.filterTabActive:hover {
+  background: var(--shift-yellow);
+  color: var(--shift-black);
+}
+
+.bulkDeleteButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(239, 68, 68, 0.2);
+  color: rgb(248, 113, 113);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bulkDeleteButton:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.headerRow {
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--shift-gray);
+  border-bottom: 1px solid rgba(107, 107, 107, 0.2);
+}
+
+.headerCell {
+  padding-bottom: 0.75rem;
+  padding-right: 1rem;
+  font-weight: 400;
+}
+
+.tableBody tr {
+  border-bottom: 1px solid rgba(107, 107, 107, 0.1);
+}
+
+.bodyRow:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.bodyCell {
+  padding: 1rem 1rem 1rem 0;
+  vertical-align: middle;
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--shift-yellow);
+}
+
+.contactName {
+  font-weight: 500;
+  color: var(--shift-cream);
+}
+
+.contactDetail {
+  font-size: 0.875rem;
+  color: var(--shift-gray);
+}
+
+.docBadge {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.docBlue {
+  background: rgba(59, 130, 246, 0.2);
+  color: rgb(96, 165, 250);
+}
+
+.docGreen {
+  background: rgba(34, 197, 94, 0.2);
+  color: rgb(74, 222, 128);
+}
+
+.docGray {
+  background: rgba(107, 107, 107, 0.2);
+  color: var(--shift-gray);
+}
+
+.dateText {
+  font-size: 0.875rem;
+  color: var(--shift-gray-light);
+}
+
+.contactedButton {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contactedButtonDone {
+  background: rgba(34, 197, 94, 0.2);
+  color: rgb(74, 222, 128);
+}
+
+.contactedButtonDone:hover {
+  background: rgba(34, 197, 94, 0.3);
+}
+
+.contactedButtonPending {
+  background: rgba(255, 214, 40, 0.2);
+  color: var(--shift-yellow);
+}
+
+.contactedButtonPending:hover {
+  background: rgba(255, 214, 40, 0.3);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--shift-gray-light);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: flex;
+}
+
+.actionButton:hover {
+  color: var(--shift-cream);
+  background: var(--shift-black);
+}
+
+.actionButtonDanger:hover {
+  color: rgb(248, 113, 113);
+}
+
+.smallIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--shift-gray);
+}
+
+.emptyIcon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  opacity: 0.5;
+}
+
+.emptySubtext {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

@@ -1,0 +1,242 @@
+.page {
+  min-height: 100vh;
+  background: var(--shift-black);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loading / Error States */
+
+.loadingContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid rgba(107, 107, 107, 0.3);
+  border-top-color: var(--shift-yellow);
+  border-radius: 9999px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loadingText {
+  color: var(--shift-gray);
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.errorTitle {
+  color: var(--shift-cream);
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.errorText {
+  color: var(--shift-gray-light);
+  margin-bottom: 2rem;
+  max-width: 28rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.errorLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--shift-black);
+  background: var(--shift-yellow);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.errorLink:hover {
+  background: var(--shift-yellow-light);
+}
+
+/* Header */
+
+.header {
+  border-bottom: 1px solid rgba(107, 107, 107, 0.15);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+.headerInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLogo {
+  height: 1.75rem;
+  width: auto;
+}
+
+.headerLabel {
+  color: var(--shift-gray);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Main Content */
+
+.main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  flex: 1;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.shipmentCol,
+.timelineCol {
+  min-width: 0;
+}
+
+/* Timeline Card */
+
+.timelineCard {
+  background: var(--shift-black-muted);
+  border: 1px solid rgba(107, 107, 107, 0.15);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.timelineTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--shift-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 2rem;
+}
+
+/* Images Section */
+
+.imagesSection {
+  margin-top: 3rem;
+}
+
+.imagesTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--shift-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.25rem;
+}
+
+.imagesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.imageCard {
+  aspect-ratio: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(107, 107, 107, 0.15);
+  transition: border-color 0.2s;
+}
+
+.imageCard:hover {
+  border-color: rgba(107, 107, 107, 0.4);
+}
+
+.imageThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.imageCard:hover .imageThumb {
+  transform: scale(1.05);
+}
+
+/* Footer */
+
+.footer {
+  border-top: 1px solid rgba(107, 107, 107, 0.15);
+  margin-top: auto;
+}
+
+.footerInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.footerText {
+  color: var(--shift-gray);
+  font-size: 0.875rem;
+}
+
+.footerLink {
+  color: var(--shift-yellow);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footerLink:hover {
+  color: var(--shift-yellow-light);
+}
+
+/* Responsive */
+
+@media (min-width: 640px) {
+  .headerLogo {
+    height: 2rem;
+  }
+
+  .main {
+    padding: 3rem 2rem 5rem;
+  }
+
+  .imagesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 2.5rem;
+  }
+
+  .imagesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

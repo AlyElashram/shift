@@ -1,0 +1,6 @@
+/* Logo Component Styles — mostly inline SVG, minimal CSS needed */
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+}

@@ -1,0 +1,57 @@
+.page {
+  min-height: 100vh;
+  background: var(--shift-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  height: 2.5rem;
+  width: auto;
+  margin: 0 auto 2rem;
+}
+
+.code {
+  color: var(--shift-yellow);
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  color: var(--shift-cream);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.message {
+  color: var(--shift-gray);
+  margin-bottom: 2rem;
+  max-width: 24rem;
+}
+
+.link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--shift-yellow);
+  color: var(--shift-black);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.link:hover {
+  background: var(--shift-yellow-dark);
+}

@@ -1,0 +1,938 @@
+.page {
+  min-height: 100vh;
+  background: var(--shift-black);
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--shift-black-muted);
+}
+
+.navInner {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLogo {
+  height: 1.5rem;
+  width: auto;
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: var(--shift-cream);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--shift-yellow);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, var(--shift-black), var(--shift-black-soft), var(--shift-black));
+}
+
+.heroGlowLeft {
+  position: absolute;
+  top: 25%;
+  left: -8rem;
+  width: 16rem;
+  height: 16rem;
+  background: var(--shift-yellow);
+  border-radius: 9999px;
+  filter: blur(150px);
+  opacity: 0.2;
+}
+
+.heroGlowRight {
+  position: absolute;
+  bottom: 25%;
+  right: -8rem;
+  width: 12rem;
+  height: 12rem;
+  background: var(--shift-yellow);
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 6rem 1rem 8rem;
+  text-align: center;
+}
+
+.heroLogo {
+  height: 3rem;
+  width: auto;
+  margin: 0 auto 1.5rem;
+}
+
+.heroTitle {
+  color: var(--shift-cream);
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.heroSubtitle {
+  color: var(--shift-gray-light);
+  font-size: 1rem;
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+}
+
+.heroHighlight {
+  color: var(--shift-yellow);
+}
+
+.heroCta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.heroCtaButton {
+  width: 100%;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  transition: color 0.2s;
+}
+
+.scrollIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--shift-gray);
+  transition: color 0.2s;
+}
+
+.scrollIndicator:hover .scrollIcon {
+  color: var(--shift-yellow);
+}
+
+/* Section Common */
+.sectionContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTag {
+  color: var(--shift-yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  color: var(--shift-cream);
+  font-family: var(--font-heading);
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Services */
+.services {
+  padding: 4rem 1rem;
+}
+
+.servicesGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.serviceCard {
+  background: var(--shift-black-muted);
+  border: 1px solid var(--shift-gray);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.serviceIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 214, 40, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.serviceIconText {
+  color: var(--shift-yellow);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.serviceTitle {
+  color: var(--shift-cream);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.serviceDescription {
+  color: var(--shift-gray-light);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* Trip Ticket */
+.tripTicket {
+  padding: 4rem 1rem;
+  background: var(--shift-black-muted);
+}
+
+.tripTicketGrid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.tripTicketInfo {
+  order: 2;
+}
+
+.tripTicketAccent {
+  font-family: 'Playfair Display', serif;
+  color: var(--shift-yellow);
+  text-transform: none;
+}
+
+.tripTicketDescription {
+  color: var(--shift-gray-light);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stepItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.stepNumber {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  background: var(--shift-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stepNumberText {
+  color: var(--shift-black);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.stepTitle {
+  color: var(--shift-cream);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.stepDescription {
+  color: var(--shift-gray-light);
+  font-size: 0.75rem;
+}
+
+.tripTicketMockupWrapper {
+  position: relative;
+  order: 1;
+}
+
+.tripTicketMockup {
+  aspect-ratio: 3 / 4;
+  max-width: 24rem;
+  margin: 0 auto;
+  background: linear-gradient(to bottom right, var(--shift-black), var(--shift-black-muted));
+  border-radius: 0.5rem;
+  border: 1px solid var(--shift-gray);
+  padding: 1.5rem;
+}
+
+.mockupInner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockupLogo {
+  height: 1.25rem;
+  width: auto;
+  margin-bottom: 1.5rem;
+}
+
+.mockupContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mockupLabel {
+  color: var(--shift-gray);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.mockupNumber {
+  color: var(--shift-yellow);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.mockupDetails {
+  width: 100%;
+  max-width: 16rem;
+}
+
+.mockupRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.mockupRowLabel {
+  color: var(--shift-gray);
+}
+
+.mockupRowValue {
+  color: var(--shift-cream);
+}
+
+.mockupRowValueYellow {
+  color: var(--shift-yellow);
+}
+
+.mockupProgressTrack {
+  height: 0.5rem;
+  background: var(--shift-black);
+  border-radius: 9999px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.mockupProgressFill {
+  height: 100%;
+  width: 66.67%;
+  background: var(--shift-yellow);
+  border-radius: 9999px;
+}
+
+.mockupProgressLabel {
+  color: var(--shift-gray);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Showcase */
+.showcase {
+  padding: 4rem 1rem;
+}
+
+.showcaseGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.showcaseCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid var(--shift-gray);
+  transition: all 0.3s;
+}
+
+.showcaseCard:hover {
+  border-color: var(--shift-yellow);
+}
+
+.showcaseImageContainer {
+  aspect-ratio: 4 / 3;
+  background: var(--shift-black-muted);
+  position: relative;
+  overflow: hidden;
+}
+
+.showcaseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.showcaseCard:hover .showcaseImage {
+  transform: scale(1.05);
+}
+
+.showcasePlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcasePlaceholderIcon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--shift-gray);
+  margin-bottom: 0.5rem;
+}
+
+.showcasePlaceholderText {
+  color: var(--shift-gray);
+  font-size: 0.75rem;
+}
+
+.showcaseOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, var(--shift-black), rgba(0, 0, 0, 0.8) 60%, transparent);
+  padding: 1rem;
+}
+
+.showcaseMeta {
+  color: var(--shift-yellow);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.showcaseModel {
+  color: var(--shift-cream);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.showcaseBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--shift-yellow);
+  color: var(--shift-black);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.showcaseFooter {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.showcaseFooterText {
+  color: var(--shift-gray-light);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.showcaseFooterLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--shift-yellow);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.showcaseFooterLink:hover {
+  color: var(--shift-yellow-light);
+}
+
+.arrowIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Contact */
+.contact {
+  padding: 4rem 1rem;
+  background: var(--shift-black-muted);
+}
+
+.contactGrid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.contactDescription {
+  color: var(--shift-gray-light);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contactIconWrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 214, 40, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--shift-yellow);
+}
+
+.contactItemLabel {
+  color: var(--shift-gray);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contactItemValue {
+  color: var(--shift-cream);
+  font-size: 0.875rem;
+}
+
+.contactItemLink {
+  color: var(--shift-cream);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contactItemLink:hover {
+  color: var(--shift-yellow);
+}
+
+/* Footer */
+.footer {
+  padding: 3rem 1rem 4rem;
+  border-top: 1px solid var(--shift-black-muted);
+}
+
+.footerGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.footerBrand {
+  grid-column: span 1;
+}
+
+.footerLogo {
+  height: 2rem;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.footerDescription {
+  color: var(--shift-gray-light);
+  margin-bottom: 1rem;
+  max-width: 28rem;
+  font-size: 0.875rem;
+}
+
+.footerAddress {
+  color: var(--shift-gray);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: block;
+}
+
+.footerAddress:hover {
+  color: var(--shift-yellow);
+}
+
+.footerHeading {
+  color: var(--shift-cream);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footerLink {
+  color: var(--shift-gray-light);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footerLink:hover {
+  color: var(--shift-yellow);
+}
+
+.footerContactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footerContactItem {
+  color: var(--shift-gray-light);
+  font-size: 0.75rem;
+}
+
+.footerContactLabel {
+  color: var(--shift-yellow);
+}
+
+.footerBottom {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--shift-black-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footerCopyright {
+  color: var(--shift-gray);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .navLogo {
+    height: 2rem;
+  }
+
+  .heroLogo {
+    height: 4rem;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.125rem;
+  }
+
+  .heroCta {
+    flex-direction: row;
+  }
+
+  .heroCtaButton {
+    width: auto;
+  }
+
+  .scrollIndicator {
+    display: block;
+  }
+
+  .services {
+    padding: 6rem 1.5rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 4rem;
+  }
+
+  .sectionTag {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .serviceIcon {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .serviceIconText {
+    font-size: 1.25rem;
+  }
+
+  .serviceTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .serviceDescription {
+    font-size: 1rem;
+  }
+
+  .tripTicket {
+    padding: 6rem 1.5rem;
+  }
+
+  .stepItem {
+    gap: 1rem;
+  }
+
+  .stepNumber {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .stepNumberText {
+    font-size: 0.875rem;
+  }
+
+  .stepTitle {
+    font-size: 1rem;
+  }
+
+  .stepDescription {
+    font-size: 0.875rem;
+  }
+
+  .mockupNumber {
+    font-size: 3rem;
+  }
+
+  .mockupRow {
+    font-size: 0.875rem;
+  }
+
+  .showcase {
+    padding: 6rem 1.5rem;
+  }
+
+  .showcaseGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .showcaseOverlay {
+    padding: 1.5rem;
+  }
+
+  .showcaseModel {
+    font-size: 1.125rem;
+  }
+
+  .contact {
+    padding: 6rem 1.5rem;
+  }
+
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .footerBrand {
+    grid-column: span 2;
+  }
+
+  .footerLogo {
+    height: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footerBottom {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+
+  .footerCopyright {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 4.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .desktopNav {
+    display: flex;
+  }
+
+  .heroTitle {
+    font-size: 6rem;
+  }
+
+  .heroLogo {
+    height: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .heroGlowLeft {
+    width: 24rem;
+    height: 24rem;
+    filter: blur(200px);
+  }
+
+  .heroGlowRight {
+    width: 16rem;
+    height: 16rem;
+    filter: blur(150px);
+  }
+
+  .tripTicketGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .tripTicketInfo {
+    order: 1;
+  }
+
+  .tripTicketMockupWrapper {
+    order: 2;
+  }
+
+  .tripTicketMockup {
+    max-width: none;
+    padding: 2rem;
+  }
+
+  .showcaseGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .footerGrid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .footerBrand {
+    grid-column: span 1;
+  }
+}

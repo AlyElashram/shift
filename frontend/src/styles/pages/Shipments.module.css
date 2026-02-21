@@ -1,0 +1,131 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loading {
+  color: var(--shift-gray);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--shift-cream);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--shift-gray-light);
+}
+
+.newButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--shift-yellow);
+  color: var(--shift-black);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.newButton:hover {
+  background: var(--shift-yellow-dark);
+}
+
+.newButtonIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filterSelect {
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--shift-black);
+  border: 1px solid rgba(107, 107, 107, 0.5);
+  color: var(--shift-cream);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.filterSelect:focus {
+  border-color: var(--shift-yellow);
+}
+
+.cellPrimary {
+  font-weight: 500;
+}
+
+.cellSecondary {
+  font-size: 0.875rem;
+  color: var(--shift-gray);
+}
+
+.statusBadge {
+  display: inline-flex;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.statusTransit {
+  background: rgba(59, 130, 246, 0.2);
+  color: rgb(96, 165, 250);
+}
+
+.statusDefault {
+  background: rgba(255, 214, 40, 0.2);
+  color: var(--shift-yellow);
+}
+
+.statusNone {
+  background: rgba(107, 107, 107, 0.2);
+  color: var(--shift-gray);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--shift-gray-light);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.actionButton:hover {
+  color: var(--shift-cream);
+  background: var(--shift-black);
+}
+
+.actionButtonDanger:hover {
+  color: rgb(248, 113, 113);
+}
+
+.actionIcon {
+  width: 1rem;
+  height: 1rem;
+}

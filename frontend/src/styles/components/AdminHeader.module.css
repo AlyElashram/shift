@@ -1,0 +1,74 @@
+.header {
+  height: 4rem;
+  background-color: var(--shift-black-muted);
+  border-bottom: 1px solid rgba(107, 107, 107, 0.2);
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.welcomeText {
+  font-size: 0.875rem;
+  color: var(--shift-gray-light);
+}
+
+.welcomeName {
+  color: var(--shift-cream);
+  font-weight: 500;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userInfo {
+  text-align: right;
+}
+
+.userName {
+  color: var(--shift-cream);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.userRole {
+  color: var(--shift-gray);
+  font-size: 0.75rem;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--shift-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarInitial {
+  color: var(--shift-black);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.signOutButton {
+  padding: 0.5rem;
+  color: var(--shift-gray-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.signOutButton:hover {
+  color: var(--shift-cream);
+}
+
+.signOutIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}

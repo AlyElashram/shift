@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipment Update</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #000000; font-family: 'Helvetica Neue', Arial, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #000000; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #1A1A1A; border-radius: 8px; overflow: hidden;">
+          <tr>
+            <td style="padding: 32px; text-align: center; border-bottom: 1px solid #333;">
+              <h1 style="margin: 0; color: #FFD628; font-size: 28px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">
+                SHIFT <span style="font-style: italic; font-weight: normal; text-transform: none;">By Joe</span>
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 40px 32px;">
+              <p style="margin: 0 0 24px; color: #FCFBE4; font-size: 18px;">Hello <%= @shipment.owner_name %>,</p>
+              <p style="margin: 0 0 24px; color: #9A9A9A; font-size: 16px; line-height: 1.6;">Great news! Your shipment status has been updated.</p>
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #000000; border-radius: 8px; margin-bottom: 24px;">
+                <tr>
+                  <td style="padding: 24px;">
+                    <p style="margin: 0 0 8px; color: #6B6B6B; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Vehicle</p>
+                    <p style="margin: 0 0 16px; color: #FCFBE4; font-size: 20px; font-weight: bold;"><%= @shipment.manufacturer %> <%= @shipment.model %></p>
+                    <p style="margin: 0 0 8px; color: #6B6B6B; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">New Status</p>
+                    <p style="margin: 0; color: #FFD628; font-size: 18px; font-weight: bold;"><%= @status.name %></p>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center">
+                    <a href="<%= @tracking_url %>" style="display: inline-block; padding: 14px 32px; background-color: #FFD628; color: #000000; font-size: 14px; font-weight: bold; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px;">Track Your Shipment</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 24px 32px; border-top: 1px solid #333; text-align: center;">
+              <p style="margin: 0; color: #6B6B6B; font-size: 14px;">Questions? Contact us at support@shiftbyjoe.com</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

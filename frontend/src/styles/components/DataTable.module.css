@@ -1,0 +1,137 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.searchContainer {
+  position: relative;
+  flex: 1;
+  max-width: 28rem;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--shift-gray);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.625rem 1rem 0.625rem 2.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--shift-black);
+  border: 1px solid rgba(107, 107, 107, 0.5);
+  color: var(--shift-cream);
+  font-size: 0.875rem;
+  transition: border-color 0.15s;
+}
+
+.searchInput::placeholder {
+  color: var(--shift-gray);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--shift-yellow);
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(107, 107, 107, 0.2);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.headerRow {
+  background-color: var(--shift-black-muted);
+}
+
+.headerCell {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: var(--shift-gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.headerCellSortable {
+  cursor: pointer;
+}
+
+.headerCellSortable:hover {
+  color: var(--shift-cream);
+}
+
+.headerCellActions {
+  text-align: right;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sortIcon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.15s;
+}
+
+.sortIconDesc {
+  transform: rotate(180deg);
+}
+
+.bodyRow {
+  border-bottom: 1px solid rgba(107, 107, 107, 0.2);
+  transition: background-color 0.15s;
+}
+
+.bodyRow:hover {
+  background-color: var(--shift-black);
+}
+
+.bodyRowClickable {
+  cursor: pointer;
+}
+
+.bodyCell {
+  padding: 0.75rem 1rem;
+  color: var(--shift-cream);
+  font-size: 0.875rem;
+}
+
+.actionsCell {
+  padding: 0.75rem 1rem;
+  text-align: right;
+}
+
+.emptyCell {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--shift-gray);
+}
+
+.resultCount {
+  font-size: 0.875rem;
+  color: var(--shift-gray);
+}

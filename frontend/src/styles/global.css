@@ -1,0 +1,232 @@
+/* =========================================
+   SHIFT BY JOE - Design System
+   ========================================= */
+
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/ObviouslyDemo-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/ObviouslyDemo-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/ObviouslyDemo-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/ObviouslyDemo-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/ObviouslyDemo-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/ObviouslyDemo-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/ObviouslyDemo-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Obviously Wide';
+  src: url('/fonts/ObviouslyDemo-WideBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Obviously Wide';
+  src: url('/fonts/ObviouslyDemo-WideBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --shift-yellow: #FFD628;
+  --shift-yellow-light: #FFE566;
+  --shift-yellow-dark: #E6B800;
+  --shift-black: #000000;
+  --shift-black-soft: #0A0A0A;
+  --shift-black-muted: #1A1A1A;
+  --shift-cream: #FCFBE4;
+  --shift-cream-dark: #FAF9E2;
+  --shift-gray: #6B6B6B;
+  --shift-gray-light: #9A9A9A;
+
+  --font-heading: 'Obviously', sans-serif;
+  --font-display: 'Obviously Wide', sans-serif;
+  --font-body: 'Obviously', sans-serif;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--shift-black);
+  color: var(--shift-cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+a { color: inherit; text-decoration: none; }
+
+::selection {
+  background: var(--shift-yellow);
+  color: var(--shift-black);
+}
+
+:focus-visible {
+  outline: 2px solid var(--shift-yellow);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--shift-black-muted); }
+::-webkit-scrollbar-thumb { background: var(--shift-gray); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--shift-yellow); }
+
+/* Utility Classes */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--shift-yellow) 0%, var(--shift-yellow-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grain-overlay { position: relative; }
+.grain-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.glow-yellow {
+  box-shadow: 0 0 15px rgba(255, 214, 40, 0.12), 0 0 30px rgba(255, 214, 40, 0.05);
+}
+
+.card {
+  background: var(--shift-black-muted);
+  border: 1px solid var(--shift-gray);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--shift-yellow);
+  box-shadow: 0 0 15px rgba(255, 214, 40, 0.06);
+}
+
+.font-accent {
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Animations */
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 214, 40, 0.1); }
+  50% { box-shadow: 0 0 20px rgba(255, 214, 40, 0.2); }
+}
+
+.animate-fade-in { animation: fadeIn 0.5s ease forwards; }
+.animate-slide-up { animation: slideUp 0.6s ease forwards; }
+.animate-slide-right { animation: slideInRight 0.6s ease forwards; }
+.animate-pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+
+/* Phone Input Styling */
+
+.phone-input-container { display: flex; align-items: center; gap: 0.5rem; }
+.phone-input-container .PhoneInputCountry {
+  padding: 0.75rem;
+  background: var(--shift-black);
+  border: 1px solid var(--shift-gray);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-base);
+}
+.phone-input-container .PhoneInputCountry:focus-within { border-color: var(--shift-yellow); }
+.phone-input-container .PhoneInputCountrySelect { background: transparent; color: var(--shift-cream); }
+.phone-input-container .PhoneInputCountrySelectArrow { border-color: var(--shift-gray-light); }
+.phone-input-container .PhoneInputInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--shift-black);
+  border: 1px solid var(--shift-gray);
+  border-radius: var(--radius-lg);
+  color: var(--shift-cream);
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+.phone-input-container .PhoneInputInput::placeholder { color: var(--shift-gray); }
+.phone-input-container .PhoneInputInput:focus { border-color: var(--shift-yellow); }
+.phone-input-error .PhoneInputCountry,
+.phone-input-error .PhoneInputInput { border-color: #ef4444; }

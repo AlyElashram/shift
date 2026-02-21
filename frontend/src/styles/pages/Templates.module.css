@@ -1,0 +1,382 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loading {
+  color: var(--shift-gray);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--shift-cream);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--shift-gray-light);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.toolbarHint {
+  color: var(--shift-gray-light);
+  font-size: 0.875rem;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--shift-yellow);
+  color: var(--shift-black);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.addButton:hover {
+  background: var(--shift-yellow-dark);
+}
+
+.addIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.groupList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.groupTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--shift-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.templateList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.templateItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--shift-black);
+  border: 1px solid rgba(107, 107, 107, 0.2);
+  transition: border-color 0.2s;
+}
+
+.templateItem:hover {
+  border-color: rgba(107, 107, 107, 0.4);
+}
+
+.templateInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.templateNameRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.templateName {
+  font-weight: 500;
+  color: var(--shift-cream);
+}
+
+.typeBadge {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.typeBadgeBlue {
+  background: rgba(59, 130, 246, 0.2);
+  color: rgb(96, 165, 250);
+}
+
+.typeBadgePurple {
+  background: rgba(168, 85, 247, 0.2);
+  color: rgb(192, 132, 252);
+}
+
+.typeBadgeGreen {
+  background: rgba(34, 197, 94, 0.2);
+  color: rgb(74, 222, 128);
+}
+
+.defaultBadge {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  background: rgba(255, 214, 40, 0.2);
+  color: var(--shift-yellow);
+}
+
+.templatePreview {
+  font-size: 0.875rem;
+  color: var(--shift-gray);
+  margin-top: 0.125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 28rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--shift-gray-light);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  color: var(--shift-cream);
+  background: var(--shift-black-muted);
+}
+
+.actionButtonDanger:hover {
+  color: rgb(248, 113, 113);
+}
+
+.smallIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--shift-gray);
+}
+
+.emptyAction {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: var(--shift-yellow);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.emptyAction:hover {
+  text-decoration: underline;
+}
+
+.modalCancel {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--shift-gray-light);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modalCancel:hover {
+  color: var(--shift-cream);
+  background: var(--shift-black);
+}
+
+.modalConfirm {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--shift-yellow);
+  color: var(--shift-black);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modalConfirm:hover {
+  background: var(--shift-yellow-dark);
+}
+
+.modalConfirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.errorBanner {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: rgb(248, 113, 113);
+  font-size: 0.875rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--shift-black);
+  border: 1px solid rgba(107, 107, 107, 0.3);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.checkboxLabel:hover {
+  border-color: var(--shift-gray);
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--shift-yellow);
+}
+
+.checkboxTitle {
+  color: var(--shift-cream);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.checkboxHint {
+  color: var(--shift-gray);
+  font-size: 0.75rem;
+}
+
+.tabRow {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(107, 107, 107, 0.2);
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  color: var(--shift-gray);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: var(--shift-cream);
+}
+
+.tab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tabActive {
+  border-bottom-color: var(--shift-yellow);
+  color: var(--shift-yellow);
+}
+
+.placeholdersBox {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--shift-black);
+  border: 1px solid rgba(107, 107, 107, 0.2);
+}
+
+.placeholdersTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--shift-cream);
+  margin-bottom: 0.75rem;
+}
+
+.placeholdersList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.placeholderButton {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  background: var(--shift-black-muted);
+  color: var(--shift-gray-light);
+  border: 1px solid rgba(107, 107, 107, 0.3);
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.placeholderButton:hover {
+  color: var(--shift-yellow);
+  border-color: rgba(255, 214, 40, 0.5);
+}
+
+.previewBox {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--shift-black);
+  border: 1px solid rgba(107, 107, 107, 0.2);
+  min-height: 200px;
+}
+
+.previewTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--shift-cream);
+  margin-bottom: 0.75rem;
+}
+
+.previewContent {
+  color: var(--shift-gray-light);
+  white-space: pre-wrap;
+}

@@ -1,0 +1,29 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  background: var(--shift-black);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background: var(--shift-black-soft);
+}
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--shift-gray-light);
+  font-size: 1rem;
+  background: var(--shift-black);
+}

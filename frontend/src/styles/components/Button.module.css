@@ -1,0 +1,106 @@
+/* Button Component Styles */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--shift-yellow);
+  outline-offset: 2px;
+}
+
+/* Variants */
+
+.primary {
+  background: var(--shift-yellow);
+  color: var(--shift-black);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--shift-yellow-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(255, 214, 40, 0.15);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--shift-cream);
+  border: 1px solid var(--shift-cream);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--shift-cream);
+  color: var(--shift-black);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--shift-cream);
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--shift-yellow);
+}
+
+/* Sizes */
+
+.sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+.md {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* Loading spinner */
+
+.spinner {
+  animation: spin 1s linear infinite;
+  height: 1rem;
+  width: 1rem;
+}
+
+.spinnerCircle {
+  opacity: 0.25;
+}
+
+.spinnerPath {
+  opacity: 0.75;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Utility: full width */
+.fullWidth {
+  width: 100%;
+}
